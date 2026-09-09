@@ -14,7 +14,7 @@ public class DiscountContext {
         }
 
         return switch (discountType.toUpperCase()) {
-            case "STUDENT" -> new StudentDiscountStrategy();
+            case "STUDENT", "MEMBER" -> new StudentDiscountStrategy();
             case "SEASONAL" -> new SeasonalDiscountStrategy();
             default -> new NoDiscountStrategy();
         };
